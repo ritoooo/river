@@ -1,0 +1,146 @@
+{
+    "additional-repositories": [],
+    "advanced": true,
+    "archinstall-language": "English",
+    "audio_config": {
+        "audio": "pipewire"
+    },
+    "bootloader": "Grub",
+    "config_version": "2.8.6",
+    "debug": false,
+    "disk_config": {
+        "config_type": "default_layout",
+        "device_modifications": [
+            {
+                "device": "/dev/sda",
+                "partitions": [
+                    {
+                        "btrfs": [],
+                        "dev_path": null,
+                        "flags": [
+                            "Boot"
+                        ],
+                        "fs_type": "fat32",
+                        "mount_options": [],
+                        "mountpoint": "/boot",
+                        "obj_id": "aebec9c6-068a-486f-9ea5-c5268c46c6d7",
+                        "size": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "GiB",
+                            "value": 1
+                        },
+                        "start": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "MiB",
+                            "value": 3
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    },
+                    {
+                        "btrfs": [],
+                        "dev_path": null,
+                        "flags": [],
+                        "fs_type": "ext4",
+                        "mount_options": [],
+                        "mountpoint": "/",
+                        "obj_id": "9310e1ae-80a4-46e3-b37d-7a739a824b2d",
+                        "size": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "B",
+                            "value": 37752373248
+                        },
+                        "start": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "B",
+                            "value": 1076887552
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    }
+                ],
+                "wipe": true
+            }
+        ]
+    },
+    "disk_encryption": null,
+    "hostname": "archlinux",
+    "kernels": [
+        "linux",
+        "linux-lts"
+    ],
+    "locale_config": {
+        "kb_layout": "us",
+        "sys_enc": "UTF-8",
+        "sys_lang": "en_US"
+    },
+    "mirror_config": {
+        "custom_mirrors": [],
+        "mirror_regions": {
+            "Brazil": [
+                "http://mirror.ufscar.br/archlinux/$repo/os/$arch",
+                "https://mirror.ufscar.br/archlinux/$repo/os/$arch",
+                "http://archlinux.c3sl.ufpr.br/$repo/os/$arch",
+                "https://archlinux.c3sl.ufpr.br/$repo/os/$arch",
+                "http://linorg.usp.br/archlinux/$repo/os/$arch",
+                "https://br.mirrors.cicku.me/archlinux/$repo/os/$arch",
+                "http://br.mirrors.cicku.me/archlinux/$repo/os/$arch",
+                "http://mirror.ufam.edu.br/archlinux/$repo/os/$arch"
+            ]
+        }
+    },
+    "network_config": {
+        "type": "nm"
+    },
+    "no_pkg_lookups": false,
+    "ntp": true,
+    "offline": false,
+    "packages": [
+        "nano",
+        "vim",
+        "man-db",
+        "man-pages",
+        "curl",
+        "wayland",
+        "xorg-xwayland",
+        "xdg-utils",
+        "xdg-user-dirs",
+        "xdg-desktop-portal-wlr",
+        "network-manager-applet",
+        "bluez-utils",
+        "blueman",
+        "git",
+        "wget",
+        "bash-completion"
+    ],
+    "parallel downloads": 5,
+    "profile_config": {
+        "gfx_driver": null,
+        "greeter": null,
+        "profile": {
+            "custom_settings": {},
+            "details": [],
+            "main": "Minimal"
+        }
+    },
+    "script": "guided",
+    "silent": false,
+    "skip_ntp": false,
+    "skip_version_check": false,
+    "swap": true,
+    "timezone": "America/Lima",
+    "uki": false,
+    "version": "2.8.6"
+}
