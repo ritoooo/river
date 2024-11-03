@@ -73,7 +73,9 @@ virt_check () {
 sudo pacman -S river ly foot polkit-gnome waybar wlr-randr kanshi fuzzel swaybg swaylock swayidle swaync udiskie otf-font-awesome ttf-jetbrains-mono ttf-jetbrains-mono-nerd pavucontrol pamixer ufw grim slurp wl-clipboard swappy ranger htop lsd firefox file-roller pcmanfm mousepad gvfs imv mpv nwg-look
 
 sudo mkdir -p /usr/local/bin
-sudo ln -s ./start-river /usr/local/bin/start-river
+# sudo ln -s ./start-river /usr/local/bin/start-river
+sudo ln -s "$(pwd)/start-river" /usr/local/bin/start-river
+
 sudo chmod +x /usr/local/bin/start-river
 
 sudo systemctl set-default graphical.target
