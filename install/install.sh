@@ -92,7 +92,7 @@ systemctl --user enable wireplumber
 
 # Enable bluetooth
 sudo systemctl enable bluetooth
-sudo systemtcl start bluetooth
+sudo systemctl start bluetooth
 
 
 # Virtualization check.
