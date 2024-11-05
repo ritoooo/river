@@ -70,7 +70,7 @@ virt_check () {
 # imv es para imágenes
 # mpv es para videos
 # nwg-look es para manejar los temas gtk
-sudo pacman -S river ly foot polkit-gnome waybar wlr-randr kanshi fuzzel swaybg swaylock swayidle swaync udiskie otf-font-awesome ttf-jetbrains-mono ttf-jetbrains-mono-nerd pavucontrol pamixer ufw grim slurp wl-clipboard swappy ranger htop lsd firefox file-roller pcmanfm mousepad gvfs imv mpv nwg-look
+sudo pacman -S --needed river ly foot polkit-gnome waybar wlr-randr kanshi fuzzel swaybg swaylock swayidle swaync udiskie otf-font-awesome ttf-jetbrains-mono ttf-jetbrains-mono-nerd pavucontrol pamixer ufw grim slurp wl-clipboard swappy ranger htop lsd firefox file-roller pcmanfm mousepad gvfs imv mpv nwg-look
 
 sudo mkdir -p /usr/local/bin
 # sudo ln -s ./start-river /usr/local/bin/start-river
