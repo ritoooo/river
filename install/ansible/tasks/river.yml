@@ -1,0 +1,45 @@
+- name: Install river
+  become: yes
+  community.general.pacman:
+    name: river
+
+- name: Ensure the file exists
+  become: yes
+  file:
+    path: /usr/local/bin/start-river
+    state: touch
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Create start-river script
+  become: yes
+  copy:
+    dest: /usr/local/bin/start-river
+    content: |
+      #!/bin/sh
+      export XDG_SESSION_TYPE=wayland
+      export XDG_SESSION_DESKTOP=river
+      export XDG_CURRENT_DESKTOP=river
+      export QT_QPA_PLATFORM=wayland
+      export SDL_VIDEODRIVEER=wayland
+      export _JAVA_AWT_WM_NONREPARENTING=1
+      exec river
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Use start-river script
+  become: yes
+  lineinfile:
+    path: /usr/share/wayland-sessions/river.desktop
+    regexp: '^Exec='
+    line: 'Exec=/usr/local/bin/start-river'
+    state: present
+    backup: yes
+
+- name: Configure graphical.target as default
+  become: yes
+  command:
+    cmd: systemctl set-default graphical.target
+

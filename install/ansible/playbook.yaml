@@ -1,0 +1,53 @@
+- name: Setup Arch Linux
+  hosts: hosts
+  connection: local
+  tasks:
+    - name: Install base dependencies
+      #kewlfft.aur.aur:
+      community.general.pacman:
+        name:
+          - ly
+          - foot
+          - polkit-gnome
+          - waybar
+          - wlr-randr
+          - kanshi
+          - fuzzel
+          - swaybg
+          - swaylock
+          - swayidle
+          - swaync
+          - udiskie
+          - pavucontrol
+          - pamixer
+          - ufw
+          - grim
+          - slurp
+          - wl-clipboard
+          - swappy
+          - ranger
+          - htop
+          - lsd
+          - firefox
+          - file-roller
+          - pcmanfm
+          - mousepad
+          - gvfs
+          - imv
+          - mpv
+          - nwg-look
+        state: present
+      become: yes
+
+    - name: Install fonts
+      become: yes
+      community.general.pacman:
+        state: present
+        name:
+          - otf-font-awesome
+          - ttf-jetbrains-mono
+          - ttf-jetbrains-mono-nerd
+
+    - name: Hello world
+      ansible.builtin.import_tasks: tasks/river.yml
+
