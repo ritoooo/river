@@ -36,6 +36,7 @@
           - imv
           - mpv
           - nwg-look
+          - helix
         state: present
       become: yes
 
