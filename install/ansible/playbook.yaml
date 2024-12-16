@@ -54,3 +54,4 @@
 
     - name: Clone dotfiles
       ansible.builtin.import_tasks: tasks/dotfiles.yml
+      tags: dotfiles
