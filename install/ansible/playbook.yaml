@@ -49,7 +49,7 @@
           - ttf-jetbrains-mono
           - ttf-jetbrains-mono-nerd
 
-    - name: Hello world
+    - name: Install river wm
       ansible.builtin.import_tasks: tasks/river.yml
 
     - name: Clone dotfiles
