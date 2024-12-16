@@ -1,0 +1,13 @@
+- name: Read-write git checkout from github
+  ansible.builtin.git:
+    repo: https://github.com/ritoooo/dots2.git
+    dest: "{{ ansible_env.HOME }}/.dotfiles"
+    bare: true
+
+- name: Git checkout
+  ansible.builtin.shell: |
+    alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+    mkdir -p .config-backup && \
+    dots checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
+    xargs -I{} mv {} .config-backup/{}

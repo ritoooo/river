@@ -51,3 +51,5 @@
     - name: Hello world
       ansible.builtin.import_tasks: tasks/river.yml
 
+    - name: Clone dotfiles
+      ansible.builtin.import_tasks: tasks/dotfiles.yml
