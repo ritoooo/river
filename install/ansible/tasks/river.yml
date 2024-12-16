@@ -1,10 +1,10 @@
 - name: Install river
-  become: yes
+  become: true
   community.general.pacman:
     name: river
 
 - name: Ensure the file exists
-  become: yes
+  become: true
   file:
     path: /usr/local/bin/start-river
     state: touch
@@ -13,7 +13,7 @@
     mode: '0755'
 
 - name: Create start-river script
-  become: yes
+  become: true
   copy:
     dest: /usr/local/bin/start-river
     content: |
@@ -30,7 +30,7 @@
     mode: '0755'
 
 - name: Use start-river script
-  become: yes
+  become: true
   lineinfile:
     path: /usr/share/wayland-sessions/river.desktop
     regexp: '^Exec='
@@ -39,7 +39,7 @@
     backup: yes
 
 - name: Configure graphical.target as default
-  become: yes
+  become: true
   command:
     cmd: systemctl set-default graphical.target
 
