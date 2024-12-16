@@ -1,0 +1,23 @@
+- name: Install ly
+  become: true
+  community.general.pacman:
+    name: ly
+
+- name: Enable ly service
+  become: true
+  ansible.builtin.shell: |
+    systemctl set-default graphical.target
+    systemctl enable ly.service
+
+- name: Edit ly config file
+  become: true
+  lineinfile:
+    path: /etc/ly/config.ini
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    state: present
+    backup: yes
+  loop:
+    - { regexp: '^animation =', line: 'animation = matrix' }
+    - { regexp: '^clock =', line: 'clock = %R' }
+    - { regexp: '^clear_password =', line: 'clear_password = true' }

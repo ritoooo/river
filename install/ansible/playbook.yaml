@@ -6,7 +6,6 @@
       #kewlfft.aur.aur:
       community.general.pacman:
         name:
-          - ly
           - foot
           - polkit-gnome
           - waybar
@@ -48,6 +47,10 @@
           - otf-font-awesome
           - ttf-jetbrains-mono
           - ttf-jetbrains-mono-nerd
+
+    - name: Setup ly
+      ansible.builtin.import_tasks: tasks/ly.yml
+      tags: ly
 
     - name: Install river wm
       ansible.builtin.import_tasks: tasks/river.yml
