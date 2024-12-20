@@ -18,12 +18,15 @@
     dest: /usr/local/bin/start-river
     content: |
       #!/bin/sh
+
       export XDG_SESSION_TYPE=wayland
       export XDG_SESSION_DESKTOP=river
       export XDG_CURRENT_DESKTOP=river
+
       export QT_QPA_PLATFORM=wayland
-      export SDL_VIDEODRIVEER=wayland
+      export SDL_VIDEODRIVER=wayland
       export _JAVA_AWT_WM_NONREPARENTING=1
+
       exec river
     owner: root
     group: root
