@@ -2,9 +2,9 @@
   hosts: hosts
   connection: local
   tasks:
-    - name: Clone dotfiles
-      ansible.builtin.import_tasks: tasks/dotfiles.yml
-      tags: dotfiles
+    # - name: Clone dotfiles
+    #   ansible.builtin.import_tasks: tasks/dotfiles.yml
+    #   tags: dotfiles
 
     - name: Install base dependencies
       #kewlfft.aur.aur:
@@ -58,3 +58,4 @@
 
     - name: Install river wm
       ansible.builtin.import_tasks: tasks/river.yml
+      tags: river
